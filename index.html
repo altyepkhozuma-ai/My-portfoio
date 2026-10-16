@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fbf8f1">
+  <title>شمسي | متجر منتجات الطاقة الشمسية</title>
+  <meta name="description" content="متجر متخصص في ألواح الطاقة الشمسية والانفرترات وبطاريات الليثيوم والإنارة والمضخات الشمسية مع توصيل وتركيب.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/styles.css">
+  <script src="static/app.js" defer></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">تخطَّ إلى المحتوى</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo" aria-label="شمسي - الصفحة الرئيسية">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </span>
+        <span>شمسي</span>
+      </a>
+      <nav aria-label="القائمة الرئيسية" class="main-nav">
+        <a href="#products">المنتجات</a>
+        <a href="#calculator">حاسبة التوفير</a>
+        <a href="#why">لماذا نحن</a>
+        <a href="#contact">تواصل معنا</a>
+      </nav>
+      <button type="button" class="cart-button" id="cart-open" aria-label="فتح سلة المشتريات">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg>
+        <span>السلة</span>
+        <span class="cart-count" id="cart-count" aria-live="polite">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <span class="eyebrow">طاقة نظيفة لمنزلك ومشروعك</span>
+          <h1>وفّر حتى <span class="highlight">70%</span> من فاتورة الكهرباء بطاقة الشمس</h1>
+          <p>ألواح شمسية وانفرترات وبطاريات ليثيوم أصلية بضمان طويل، مع تصميم النظام والتوصيل والتركيب على يد فنيين معتمدين.</p>
+          <div class="hero-actions">
+            <a href="#products" class="btn btn-primary">تسوّق المنتجات</a>
+            <a href="#calculator" class="btn btn-outline">احسب توفيرك</a>
+          </div>
+          <dl class="stats">
+            <div><dt>عميل راضٍ</dt><dd>+12,000</dd></div>
+            <div><dt>ضمان الألواح</dt><dd>25 سنة</dd></div>
+            <div><dt>دعم فني</dt><dd>24/7</dd></div>
+          </dl>
+        </div>
+        <div class="hero-media">
+          <img src="images/hero.png" alt="ألواح طاقة شمسية مثبتة على سطح منزل حديث" width="640" height="480">
+        </div>
+      </div>
+    </section>
+
+    <section id="products" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>منتجاتنا</h2>
+          <p>كل ما تحتاجه لبناء نظام طاقة شمسية متكامل.</p>
+        </div>
+        <div class="filters" role="tablist" aria-label="تصنيفات المنتجات" id="filters"></div>
+        <ul class="product-grid" id="product-grid"></ul>
+      </div>
+    </section>
+
+    <section id="calculator" class="section section-dark">
+      <div class="container calc-inner">
+        <div>
+          <h2>حاسبة التوفير</h2>
+          <p>أدخل قيمة فاتورة الكهرباء الشهرية لتعرف حجم النظام المناسب والتوفير المتوقع.</p>
+        </div>
+        <form class="calc-card" id="calc-form">
+          <label for="bill">فاتورتك الشهرية (ريال)</label>
+          <div class="range-row">
+            <input type="range" id="bill" min="100" max="5000" step="50" value="800">
+            <output id="bill-value" for="bill">800 ريال</output>
+          </div>
+          <dl class="calc-results">
+            <div><dt>حجم النظام المقترح</dt><dd id="r-size">—</dd></div>
+            <div><dt>عدد الألواح (550 واط)</dt><dd id="r-panels">—</dd></div>
+            <div><dt>التوفير السنوي</dt><dd id="r-save">—</dd></div>
+          </dl>
+          <a href="#contact" class="btn btn-primary btn-block">اطلب عرض سعر مجاني</a>
+        </form>
+      </div>
+    </section>
+
+    <section id="why" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>لماذا تختار شمسي؟</h2>
+        </div>
+        <ul class="features">
+          <li><h3>منتجات أصلية</h3><p>نتعامل مباشرة مع المصنّعين المعتمدين عالميًا.</p></li>
+          <li><h3>تركيب احترافي</h3><p>فريق فني معتمد يصمّم ويركّب نظامك بالكامل.</p></li>
+          <li><h3>توصيل سريع</h3><p>شحن لجميع المدن خلال 2 إلى 5 أيام عمل.</p></li>
+          <li><h3>ضمان شامل</h3><p>ضمان يصل إلى 25 سنة مع خدمة ما بعد البيع.</p></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p class="logo">شمسي</p>
+        <p>متجرك الموثوق لحلول الطاقة الشمسية.</p>
+      </div>
+      <address>
+        <p>الهاتف: <a href="tel:+966500000000" dir="ltr">+966 50 000 0000</a></p>
+        <p>البريد: <a href="mailto:info@shamsi.sa">info@shamsi.sa</a></p>
+      </address>
+    </div>
+    <p class="container copyright">&copy; <span id="year"></span> شمسي. جميع الحقوق محفوظة.</p>
+  </footer>
+
+  <div class="overlay" id="cart-overlay" hidden></div>
+  <aside class="drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cart-title" hidden>
+    <div class="drawer-head">
+      <h2 id="cart-title">سلة المشتريات</h2>
+      <button type="button" class="icon-btn" id="cart-close" aria-label="إغلاق السلة">&times;</button>
+    </div>
+    <ul class="cart-items" id="cart-items"></ul>
+    <div class="drawer-foot">
+      <div class="total-row"><span>الإجمالي</span><strong id="cart-total">0</strong></div>
+      <button type="button" class="btn btn-primary btn-block" id="checkout">إتمام الطلب</button>
+    </div>
+  </aside>
+</body>
+</html>
